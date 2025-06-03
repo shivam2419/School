@@ -2,3 +2,4 @@ Django==4.2.6
 djangorestframework==3.14.0
 python-decouple==3.8
 Requests==2.32.3
+Pillow==10.1.0
