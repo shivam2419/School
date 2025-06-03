@@ -1,0 +1,194 @@
+{% extends "base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block css %}{% static 'gallery.css' %}{% endblock css %}
+    <title>{% block title %}| SCHOOL GALLERY{% endblock title %}</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    {% block body %}
+    <center><h2>Our Campus Gallery</h2></center>
+    <div class="first">
+      <div class="left">
+        <h2>Inaugration</h2>
+        <div class="main">
+          {% for img in inaug %}
+          <img src="/media/{{img.inaugration}}" alt="" class="slide" />
+          {% endfor %}
+        </div>
+        <div class="butt">
+          <button onclick="goPrev();">&larr;</button>
+          <button onclick="goNext();">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>Assembly</h2>
+        <div class="main">
+          {% for img in assem %}
+          <img src="/media/{{img.assembly}}" alt="" class="slide1" />
+          {% endfor %}
+        </div>
+        <div class="butt">
+          <button onclick="goPrev1();">&larr;</button>
+          <button onclick="goNext1();">&rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="second">
+      <div class="left">
+        <h2>Functions</h2>
+        <div class="main">
+          {% for img in func %}
+          <img src="/media/{{img.function}}" alt="" class="slide2" />
+          {% endfor %}
+        </div>
+        <div class="butt">
+          <button onclick="goPrev2();">&larr;</button>
+          <button onclick="goNext2();">&rarr;</button>
+        </div>
+      </div>
+      <div class="right">
+        <h2>PT</h2>
+        <div class="main">
+          {% for img in pt %}
+          <img src="/media/{{img.PT}}" alt="" class="slide3" />
+          {% endfor %}
+        </div>
+        <div class="butt">
+          <button onclick="goPrev3();">&larr;</button>
+          <button onclick="goNext3();">&rarr;</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Slides Section
+      //Slide 0 section
+      const slides = document.querySelectorAll(".slide");
+      var counter = 0;
+      slides.forEach((slide, index) => {
+        slide.style.left = `${index * 100}%`;
+      });
+      inaug={{inaug|length}};
+      const goNext = () => {
+        counter++;
+       if(counter+1>inaug)
+        {
+          counter=0;
+        }
+        slideImage();
+      };
+      const goPrev = () => {
+        counter--;
+        if (counter < 0) {
+          counter = inaug-1;
+        }
+        slideImage();
+      };
+      const slideImage = () => {
+        slides.forEach((slide) => {
+          slide.style.transform = `translateX(-${counter * 100}%)`;
+        });
+      };
+
+      //Slide 1 section
+
+      const slides1 = document.querySelectorAll(".slide1");
+      var counter1 = 0;
+      assem={{assem|length}};
+      console.log(assem);
+      slides1.forEach((slide, index) => {
+        slide.style.left = `${index * 100}%`;
+      });
+      const goNext1 = () => {
+        counter1++;
+        if(counter1+1>assem)
+        {
+          counter1=0;
+        }
+        slideImage1();
+      };
+      const goPrev1 = () => {
+        counter1--;
+        if (counter1 < 0) {
+          counter1 = assem-1;
+        }
+        slideImage1();
+      };
+      const slideImage1 = () => {
+        slides1.forEach((slide) => {
+          slide.style.transform = `translateX(-${counter1 * 100}%)`;
+        });
+      };
+
+      //Slide 2 section
+
+      const slides2 = document.querySelectorAll(".slide2");
+      var counter2 = 0;
+      slides2.forEach((slide, index) => {
+        slide.style.left = `${index * 100}%`;
+      });
+      const goNext2 = () => {
+        counter2++;
+        if (counter2 < 0) {
+          counter2 = 3;
+        } else if (counter2 > 3) {
+          counter2 = 0;
+        }
+        slideImage2();
+      };
+      const goPrev2 = () => {
+        counter2--;
+        if (counter2 < 0) {
+          counter2 = 3;
+        } else if (counter2 > 3) {
+          counter2 = 0;
+        }
+        slideImage2();
+      };
+      const slideImage2 = () => {
+        slides2.forEach((slide) => {
+          slide.style.transform = `translateX(-${counter2 * 100}%)`;
+        });
+      };
+
+      //Slide 2 section
+
+      const slides3 = document.querySelectorAll(".slide3");
+      var counter3 = 0;
+      slides3.forEach((slide, index) => {
+        slide.style.left = `${index * 100}%`;
+      });
+      const goNext3 = () => {
+        counter3++;
+        if (counter3 < 0) {
+          counter3 = 3;
+        } else if (counter3 > 3) {
+          counter3 = 0;
+        }
+        slideImage3();
+      };
+      const goPrev3 = () => {
+        counter3--;
+        if (counter3 < 0) {
+          counter3 = 3;
+        } else if (counter3 > 3) {
+          counter3 = 0;
+        }
+        slideImage3();
+      };
+      const slideImage3 = () => {
+        slides3.forEach((slide) => {
+          slide.style.transform = `translateX(-${counter3 * 100}%)`;
+        });
+      };
+    </script>
+    {% endblock body %}
+  </body>
+</html>

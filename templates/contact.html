@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block css%}static/contact.css{% endblock css%}
+    <title>{% block title %} | CONTACT{% endblock title %}</title>
+  </head>
+  <body>
+    {% block body%}
+    <div class="container">
+      <div class="middle">
+        <div class="left">
+          <h2>Boxes full of STEAM</h2>
+          <p>
+           Aryabhatta public school asks you to give your information .So that,we can contact with you.Feel free to give information as we will keep it private and safe.
+          </p>
+          <form action="" method="POST">
+          {% csrf_token %}
+            <h3>Contact Our Community!</h3>
+            <input type="text" placeholder="First name" name="fname" required />
+            <input type="text" placeholder="Last name" name="lname" required />
+            <input type="email" placeholder="Email" name="email" id="mail" required  />
+            <input type="number" placeholder="Phone number*" name="txt"  required/>
+            <br />
+            <input type="submit" value="Proceed" />
+          </form>
+        </div>
+      </div>
+
+
+      <div class="content">
+      <h2>Why <span>Contact ?</span></h2>
+      <p>By contacting us, We can solve all your queries about us. Feel safe about your data and no scam calls or text messages will appear from our side.</p>
+      
+      </div>
+    </div>
+
+    {% endblock body%}
+  </body>
+</html>

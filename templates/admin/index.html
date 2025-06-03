@@ -1,0 +1,40 @@
+{% extends "admin/adminbase.html" %}
+{% load static %}
+{% block title %}| Enquiry Dashboard{% endblock title %}
+{% block css %}{% static "admin.css" %}{% endblock css %}
+
+{% block body %}
+<div class="admin-container">
+    <div class="card">
+        <a href="{% url 'enquiry' %}">
+            <img src="https://t4.ftcdn.net/jpg/07/31/65/81/360_F_731658136_4fiY71aMa78vlb1KgrJwnf5xdOGKWgws.jpg" alt="">
+            <h1>REGISTRATIONS</h1>
+        </a>
+    </div>
+    <div class="card">
+        <a href="{% url 'Activities' %}">
+            <img src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Photos-512.png" alt="">
+            <h1>MAIN IMAGES</h1>
+        </a>
+    </div>
+    <div class="card">
+        <a href="{% url 'Events' %}">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgm_6jsqHatJ8cVOMNJ_VTWgr2Swi4wKuKdg&s"
+                alt="">
+            <h1>EVENTS</h1>
+        </a>
+    </div>
+    <div class="card">
+        <a href="{% url 'Notice' %}">
+            <img src="https://cdn-icons-png.flaticon.com/512/7757/7757460.png" alt="">
+            <h1>NOTICES</h1>
+        </a>
+    </div>
+    <div class="card">
+        <a href="{% url 'School_gallery' %}">
+            <img src="https://cdn-icons-png.flaticon.com/512/4503/4503941.png" alt="">
+            <h1>SCHOOL GALLERY</h1>
+        </a>
+    </div>
+</div>
+{% endblock body %}

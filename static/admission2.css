@@ -1,0 +1,116 @@
+.page-content {
+  margin: 15px;
+}
+#head {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#regis {
+  font-family: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.page-title p b {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.page-title ul li {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  list-style: circle;
+}
+ul li a {
+  text-decoration: none;
+  color: black;
+}
+.tab-content {
+  background-color: white;
+}
+.caption {
+  background-color: #437db3;
+  padding: 8px;
+  color: white;
+}
+.caption i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.form-group {
+  display: flex;
+  margin: 15px;
+}
+.form-group label {
+  width: 200px;
+}
+.form-group select {
+  width: 510px;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgb(202, 199, 199);
+  margin-left: 20px;
+}
+.form-group div input {
+  width: 500px;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgb(202, 199, 199);
+  margin-left: 20px;
+}
+.select p {
+  margin: auto;
+  margin-left: 20px;
+  font-size: 10px;
+  font-weight: lighter;
+}
+#last {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+.form-body ul li{
+  list-style: none;
+  margin-left: -30px;
+}
+/* Father's Part */
+.tab-pane {
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px gray;
+  margin-bottom: 20px;
+}
+
+/* Submission pasrt */
+.portlet-body {
+  padding: 10px;
+}
+/* last */
+.l-button {
+  background-color: #cb5a5e;
+  width: 200px;
+  padding: 8px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5%;
+  transition: 0.3s ease-in-out;
+}
+.l-button:hover{
+  box-shadow: 1px 1px 10px 1px rgb(97, 93, 93);
+  scale: 1.08;
+}
+
+@media screen and (max-width: 690px) {
+  .tab-content{
+    width: 100%;
+  }
+  .form-group label{
+    width: 100px;
+    font-size: 12px;
+  }
+  .form-group div select{
+    width: 210px;
+  }
+  .form-group div input{
+    width: 200px;
+  }
+  .l-button {
+    width: 90%;}
+}

@@ -1,0 +1,317 @@
+{% extends "base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block css %}static/admission.css{% endblock css %}
+    <title>{% block title %}| ADMISSION{% endblock title %}</title>
+  </head>
+  {% block body %}
+  <div class="container">
+    <div class="header">
+      <h3 style="margin: 15px 0px 20px 0px; font-size: 30px">
+        <center>
+          <b>Welcome to the world of Aryabhatta Public School, Agra</b>
+        </center>
+      </h3>
+      <h4>
+        <center
+          style="
+            font-family: calibri black;
+            font-size: 19px;
+            margin-bottom: 20px;
+          "
+        >
+          Shamshabad Road, Agra (Uttar Pradesh)<br />
+          Phone No: 0129-2280522, 2290522, 7017217471<br />
+          Email Id: aryabhattpublicedu.com
+        </center>
+      </h4>
+    </div>
+    <div class="info">
+      <div id="ContentPanel" style="box-shadow:1px 2px 10px 1px gray">
+        <table border="1" cellpadding="1" cellspacing="1" style="width: 100%">
+          <tbody>
+            <tr
+              class="caption"
+              style="background-color: rgb(11, 80, 145); color: white; border:none;"
+            >
+              <th colspan="2" id="head">
+                <p>
+                  <span style="font-size: 16px"
+                    ><strong
+                      >REGISTRATION FOR SESSION:
+                      {{next_year}}-{{over_year}}</strong
+                    ></span
+                  >
+                </p>
+              </th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>
+                  <br />
+                  <span style="font-size: 16px"
+                    ><strong
+                      >Registration will be Online&nbsp; only through School
+                      website w.e.f. 01.09.{{year}}</strong
+                    >.</span
+                  >
+                </p>
+
+                <ul>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >Submission of Application does not guarantee
+                        admission.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >Incomplete / Incorrect forms will be deemed as
+                        rejected.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >The decision of the School&nbsp;Selection Committee
+                        will be final and binding to all.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >Parents are advised not to fill more than one form for
+                        one applicant.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >Transport facility is available on existing routes
+                        only.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        >On account of seats being very limited,&nbsp;the
+                        admission process focuses mainly on personal interaction
+                        and academic assessment.</span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        ><strong
+                          ><span style="background-color: #00ffff"
+                            >After filling the Online Registration Form, please
+                            check for the date &amp; time slot for the
+                            Interaction Session / Entrance Test mentioned on
+                            your Registration Form.&nbsp; Please adhere to it to
+                            avoid inconvenience.</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span style="font-size: 16px"
+                        ><strong
+                          ><span style="background-color: #00ffff"
+                            >Students appearing for Test for Classes - I onwards
+                            to come in their previous school uniform.</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <p style="text-align: center">
+                  <strong
+                    ><span style="font-size: 25px"
+                      ><a
+                        class="my btn btn-danger"
+                        href="/2A8C6F68-A745-47FA-B0C4-9DA2F414CC2C/CMS/Page/School-Transport"
+                        target="_blank"
+                        data-original-title=""
+                        title=""
+                        ><span style="color: #000000"
+                          >School Transport Details<br />
+                          (Click Here to Download)</span
+                        ></a
+                      ></span
+                    ></strong
+                  >
+                </p>
+              </th>
+              <th>
+                <p style="text-align: center">
+                  <strong
+                    ><span style="font-size: 25px"
+                      ><a
+                        class="my btn btn-danger"
+                        href="/File/7784/Syllabus Half Yearly 23-24.pdf"
+                        target="_blank"
+                        data-original-title=""
+                        title=""
+                        ><span style="color: #000000"
+                          >Entrance Test Syllabus<br />
+                          (Click Here to Download)</span
+                        ></a
+                      ></span
+                    ></strong
+                  >
+                </p>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"
+                    ><strong>Pedagogical&nbsp;Structure</strong>
+                    <strong
+                      >(Academic&nbsp;Year&nbsp;
+                      {{next_year}}-{{over_year}})</strong
+                    ></span
+                  >
+                </p>
+              </th>
+              <th>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"
+                    ><strong>Age as on 01.04.{{next_year}}</strong></span
+                  >
+                </p>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>Nursery</strong></span>
+                </p>
+              </td>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>3 YEARS</strong></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>L.K.G.</strong></span>
+                </p>
+              </td>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>4 YEARS</strong></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>U.K.G.</strong></span>
+                </p>
+              </td>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>5 YEARS</strong></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>I</strong></span>
+                </p>
+              </td>
+              <td>
+                <p style="text-align: center">
+                  <span style="font-size: 16px"><strong>6 YEARS</strong></span>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" id="last">
+                <div>&nbsp;</div>
+                <p>
+                  <strong style="font-size: 16px; text-align: center"
+                    >Documents required at the time of Admission</strong
+                  >
+                </p>
+                <div>
+                  <ul>
+                    <li>
+                      <span style="font-size: 16px"
+                        >SRN No. from the previous school&nbsp;<strong
+                          >(Classes : II-XII)</strong
+                        ></span
+                      >
+                    </li>
+                    <li>
+                      <span style="font-size: 16px"
+                        >School Leaving / Transfer
+                        Certificate&nbsp;<strong>(Original)</strong>&nbsp;from
+                        previous school attended</span
+                      >
+                    </li>
+                    <li>
+                      <span style="font-size: 16px"
+                        >Vaccination Card (for Classes Nursery, LKG &amp;
+                        UKG)</span
+                      >
+                    </li>
+                    <li>
+                      <span style="font-size: 16px"
+                        >Annual Report Card (last class passed)</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p style="text-align: center">
+                  <span style="font-size: 20px"
+                    ><a
+                      class="my btn btn-info"
+                      href="admission2"
+                      data-original-title=""
+                      title=""
+                      >
+                      <img src="https://t3.ftcdn.net/jpg/02/93/99/70/360_F_293997068_pN2WRGX1mb8LkVrq4b3RMffAiWO9SX88.jpg" alt="" height="40px" style="margin-bottom: -12px;"><span style="color: #000000; " id="l_span"
+                        ><strong>
+                          
+                          I have read the above instructions carefully and agree
+                          to Proceed for Registration</strong
+                        ></span
+                      ></a
+                    ></span
+                  >
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock body %}
+</html>

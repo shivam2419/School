@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    Events
+    {% endblock title %}
+    {% block css %}static/eventinfo.css{% endblock css %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="event-container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for items in data %}
+            <div class="heading">
+                <h1>EVENT &nbsp;&nbsp;</h1>
+                <div class="card">
+                    <div class="img">
+                        <img src="{{items.event_img.url}}" alt="">
+                    </div>
+                    <div class="data">
+                        <p>
+                            <img src="https://previews.123rf.com/images/bearsky23/bearsky231710/bearsky23171000018/87524731-calendar-image-with-specific-date.jpg"
+                                alt="">
+                            {{items.date}}{{items.month}}
+                        </p>
+                        <h3>{{items.event}}</h3>
+                        <p>{{items.event_desc}}</p>
+                        <br>
+                        <button><a href="{{request.META.HTTP_REFERER}}">Go Back >>></a></button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+
+    {% endblock body %}
+</body>
+
+</html>

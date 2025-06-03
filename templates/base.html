@@ -1,0 +1,324 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% block css %}{% endblock css %}"/>
+    <link rel="stylesheet" href="static/base.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>ARYABHATT EDU {% block title %}{% endblock title %}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.3.0/css/all.css"
+    />
+  </head>
+  <body>
+    <nav id="nav">
+      <div id="bar">
+        <i Style="font-size:24px;" class="fa fa-bars" onclick="openNav()"></i>
+      </div>
+      <a href="index"><img src={% static 'logo.jpg' %} alt=".." /></a>
+      <h2>ARYABHATTA</h2>
+      <ul>
+      <li><i class="fa fa-user" style="margin-right: 10px"></i
+          ><a href="index">HOME</a>
+        </li>
+
+        <li>
+          <i class="fa fa-group" style="margin-right: 10px"></i
+          ><a href="about">ABOUT US</a>
+        </li>
+
+        <li>
+          <i class="fa fa-newspaper-o" style="margin-right: 10px"></i
+          ><a href="admission">ADMISSIONS</a>
+        </li>
+
+        <li>
+          <i class="fa fa-map-marker" style="margin-right: 10px"></i
+          ><a href="contact">CONTACT</a>
+        </li>
+
+        <li >
+        <i class="fa fa-gear"></i>
+        <a href="service">SERVICES</a>
+        <ul class="dropdown">
+        <li value=""><a href="{% static 'fees.docx' %}" ><i class="fa fa-star" id="star"></i>Fees Structure</a></li>
+        <li value="about"><a href="{% static 'busroute.docx' %}"><i class="fa fa-star" id="star"></i>Bus Route</a></li>
+        <li value="admission"><a href="Gallery"><i class="fa fa-star" id="star"></i>School Gallery</a></li>
+        
+        </ul>
+        </li>
+      </ul>
+      <button id="navbutton"><a href="admission">Register</a></button>
+    </nav>
+    <!--side bar-->
+    <div id="mySidebar" class="sidebar">
+      <p  class="closebtn" onclick="closeNav()" style='color:white;'>&times;</p>
+      <h3>Menu</h3>
+      <a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a>
+      <a href="{% url 'about' %}"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;About Us</a>
+      <a href="{% url 'admission' %}"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Admissions</a>
+      <a href="{% url 'contact' %}"><i class="fa fa-address-book"aria-hidden="true"></i>&nbsp;&nbsp;Contact</a>
+      <a href="{% url 'service' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Services</a>
+      <a href="{% url 'enquire' %}"><i class="fa fa-registered" aria-hidden="true"></i>&nbsp;&nbsp;Register</a>
+      
+  </div>
+
+    {% block body %}
+    
+    {% endblock body %}
+    <footer>
+      <div class="footer-top-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+              <div id="block-5" class="widget widget_block">
+                <a href="{% url 'adminDashboard' %}">
+                  <p>
+                    <img
+                      loading="lazy"
+                      src="{% static 'logo.jpg' %}"
+                      alt="Girl in a jacket"
+                      width="350"
+                      height="100"
+                    />
+                  </p>
+                     </a>
+              </div>
+              <div id="rdtheme_about-2" class="widget widget_rdtheme_about">
+                <p class="rtin-des">
+                  Aryabhatt Public School, Agra is a premier educational
+                  institution of Agra City.
+                </p>
+                <ul></ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div id="nav_menu-2" class="widget widget_nav_menu">
+                <h3 class="widgettitle">Featured Links</h3>
+                <div class="menu-featured-links-container">
+                  <ul id="menu-featured-links" class="menu">
+                    <li
+                      id="menu-item-7857"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7857"
+                    >
+                      <a href=""
+                        >Mandatory Disclosure</a
+                      >
+                    </li>
+                    <li
+                      id="menu-item-4059"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4059"
+                    >
+                      <a href="{% url "School_gallery" %}">Sports</a>
+                    </li>
+                    <li
+                      id="menu-item-4061"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4061"
+                    >
+                      <a href="{% url "service" %}"
+                        >Transport</a
+                      >
+                    </li>
+                    <li
+                      id="menu-item-4062"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4062"
+                    >
+                      <a href="{% url "contact" %}">Contact Us</a>
+                    </li>
+                    <li
+                      id="menu-item-4695"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"
+                    >
+                      <a href="{% url "Gallery" %}">Gallery</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div id="rdtheme_info-2" class="widget widget_rdthemeinfo">
+                <h3 class="widgettitle">Information</h3>
+                <ul>
+                  <li>
+                    <i class="far fa-paper-plane" aria-hidden="true"></i><a href="">Aryabhatt Public School ,Agra</a>
+                  </li>
+                  <li>
+                    <i class="far fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:aryabhattapublicedu@gmail.com">aryabhattapublicedu@gmail.com</a>
+                  </li>
+                  <li>
+                    <i class="fas fa-fax" aria-hidden="true"></i> 0129-4041522
+                  </li>
+                </ul>
+              </div>
+              <div id="block-9" class="widget widget_block">
+                <a href="#"
+                  ><i
+                    class="fa fa-phone"
+                    style="font-size: 14px; color: #fdc800"
+                  ></i></a
+                >&nbsp;&nbsp;&nbsp; <a href="tel:9953214480">7011172174</a>,
+                <a href="tel:70172164">9911414480</a
+                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="tel:01292280522">0129-2280522</a>,
+                <a href="tel:01292290522">2290522</a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <div id="rdtheme_about-3" class="widget widget_rdtheme_about">
+                <h3 class="widgettitle">Social Media</h3>
+                <p class="rtin-des"></p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/DelhiPublicSchoolFaridabad/"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><i class="fab fa-google-plus-g"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div id="block-6" class="widget widget_block">
+                <p>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.982752618412!2d77.30979616507781!3d28.41977728250222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddb641bb4a81%3A0x9720850180764c0b!2sDELHI%20PUBLIC%20SCHOOL%!5e0!3m2!1sen!2sin!4v1638169043218!5m2!1sen!2sin"
+                    width="300"
+                    height="200"
+                    style="box-shadow: 3px 3px 5px #aaaaaa"
+                    allowfullscreen=""
+                    loading="lazy"
+                  ></iframe>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 text-center">
+              © Copyright <a href=""> Aryabhatt Agra</a> 2025.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $("#bar").click(function () {
+        $("#nav").hide();
+        var sidebar = document.getElementById("navbar");
+        sidebar.style.display = "block";
+      });
+      $(".close").click(function () {
+        $("#navbar").hide();
+        $("#nav").show();
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("nav").style.display = "none";
+
+    }
+
+      /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("nav").style.display = "flex";
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+      }
+    </script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
+        },
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

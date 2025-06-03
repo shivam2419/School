@@ -1,0 +1,104 @@
+.middle{
+    background-image: url('cback.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+    color: white;
+}
+.middle .left{
+    width: 100%;
+}
+.middle .left h2{
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: black;
+}
+.middle .left p{
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    margin: 2%;
+    margin-left: 3%;
+    width: 500px;
+    color: black;
+}
+/* Form section */
+form{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    padding-right: 40px;
+    width: fit-content;
+}
+form p{
+    font-family: "Roboto", sans-serif;
+}
+form h3{
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: rgb(5, 38, 137);
+    padding-bottom: 30px;
+}
+form input{
+    border: none;
+    padding: 5px;
+    margin: 10px;
+    width: 100%;
+    border-bottom: 3px solid black;
+}
+input:last-child{
+    background-color: rgb(58, 40, 220);
+    padding: 5px;
+    width: 90%;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+}
+/* Content area */
+.content{
+    text-align: center;
+    margin-top: 5%;
+}
+.content h2{
+    margin: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content h2 span{
+    color: rgb(58, 40, 220) ;
+}
+.content p{
+    width: 100%;
+    margin: auto;
+    font-size: 18px;
+}
+@media only screen and (max-width: 885px) {
+   .middle .left p{
+    width: 300px;
+    margin-bottom: 20px;
+   }
+   form{    
+    width: 350px;
+   }
+   form input{
+    width: 260px;
+    margin-top: 10px;
+   }
+    
+}
+@media only screen and (max-width: 385px) {
+    .middle .left p{
+        font-size: 13px;
+    }
+    form{
+        width: 250px;
+    }
+    form input{
+        width: 200px;
+    }
+}

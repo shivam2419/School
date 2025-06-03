@@ -1,0 +1,76 @@
+.event-container{
+    padding: 2%;
+}
+.heading{
+    background-color: rgb(62, 49, 60);
+    margin: auto;
+    width: 80%;
+}
+.heading h1{
+   color: white;
+   margin-left: 20px;
+   font-size: 28px;
+}
+.event-container .card{
+    background-color: white;
+    margin: auto;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+    align-items: center;
+}
+.event-container .card .img{
+    text-align: center;
+}
+.event-container .card .img img{
+    margin: auto;
+    height: 180px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 20px 1px gray;
+}
+.event-container .card .data{
+    width: 400px;
+}
+.event-container .card .data h3{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 0px 10px;
+    margin: 10px;
+    width: fit-content;
+}
+.event-container .card .data p{
+    font-weight: lighter;
+    color: rgb(75, 75, 75);
+    display: flex;
+    line-height: 30px;
+    align-items: center;
+    margin: 20px;
+}
+
+.event-container .card .data p img{
+    height: 40px;
+}
+
+.event-container .card .data button{
+    background-color: green;
+    border-radius: 10px;
+    padding: 8px;
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    .heading{
+        width: 100%;
+    }
+    .event-container .card{
+        display: block;
+    }
+    .event-container .card .data p{
+        width: 300px;
+    }
+    .event-container .card .data h3{
+        width: 60%;
+    }
+  }

@@ -1,0 +1,223 @@
+{% extends "base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block css %}{% static "index.css" %}{% endblock css %}
+    <title>{% block title %}Home{% endblock title %}</title>
+  </head>
+  {% block body %}
+  <div class="container">
+    <div class="middle">
+      <div class="content">
+        <div class="left">
+          <h1>Aryabhatt Public School, Agra</h1>
+          <p>
+            Aryabhatt public school, Agra is recognized as the Best school in
+            Agra & among the top schools in Agra
+          </p>
+          <br /><br />
+          <button><a href="admission">Register</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="new">
+      <marquee behavior="" direction="left">
+        <img src="{% static 'new.gif' %}" alt="" />
+        <p><a href="admission">Admission open for classes Nur to XI</a></p>
+      </marquee>
+    </div>
+    <div class="message">
+      <div class="about_school">
+        <h2>President's Message</h2>
+        <img src="{% static 'president.jpeg' %}" alt="" />
+        <p>
+          A dream comes true - a dream of social commitment and responsibility.
+          I look forward for the great development of technology and the ways by
+          which the younger generation obtains it. | will be delighted to see my
+          endeavors - Indian Era Sr. Secondary School-enhances in moulding the
+          future citizens with modern education, without...
+          <br /><br />
+          <button><a href="about">Read More...</a></button>
+        </p>
+      </div>
+      <div class="principal_message">
+        <h2>Principal Message</h2>
+        <img src="{% static 'sir.jpg' %}" alt="" />
+        <p>
+          "Life always begins with one step outside of our comfort zone."
+          Shannon L. Alder. Life is a perennial journey of excellence, infused
+          with learning experiences. Every experience empowers the learner to be
+          even more enriched with confidence. To thrive in the modern world, a
+          child needs to be...
+          <br /><br /><button><a href="about">Read More...</a></button>
+        </p>
+      </div>
+    </div>
+    <div class="about" data-aos="fade-up" data-aos-duration="1000">
+      <div class="left">
+        <h1>Why Aryabhatt School ?</h1>
+        <p>
+          Aryabhatta School excels in academics and holistic development. With
+          innovative teaching and dedicated faculty, we prioritize critical
+          thinking and character building. Our state-of-the-art facilities and
+          global perspective prepare students for success in a diverse world.
+        </p>
+        <button><a href="{% url 'admission' %}">Enroll</a></button>
+      </div>
+      <div class="right">
+        <div>
+          <span>01.</span> <br />
+          BETTER EDUCATION
+        </div>
+        <div>
+          <span>02.</span> <br />
+          PROGRAMS
+        </div>
+        <div>
+          <span>03.</span> <br />
+          STUDENT SERVICES
+        </div>
+      </div>
+    </div>
+    <div class="mission">
+      <div class="left">
+        <h1 data-aos="fade-right" data-aos-duration="1000">Our Mission</h1>
+        <p data-aos="fade-right" data-aos-duration="1000">
+          To lay the foundation of noble character of moral imtergity,
+          brotherhood, patriotism and sacrifice in the young minds so that they
+          grow straight and strong an ideal leaders who can shape destiny of the
+          nation.
+          <br /><br />
+        </p>
+      </div>
+      <div class="right">
+        <img
+          src="https://cdni.iconscout.com/illustration/premium/thumb/mission-goals-4252954-3526675.png"
+          alt=""
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        />
+      </div>
+    </div>
+    <div class="history" data-aos="fade-uo" data-aos-duration="1000">
+      <h1>Upcoming Events</h1>
+      <table>
+        {% for st in stu %}
+        <tr>
+          <td>{{st.date}}<sup>th</sup></td>
+          <td>{{st.month}}</td>
+          <td><b>{{st.event}}</b></td>
+          <td>
+            <button><a href="{% url 'EventInfo' %}">Visit</a></button>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </table>
+    </div>
+    <div class="programs" id="programs">
+      <div class="left">
+        <h1>School Activities</h1>
+        <div
+          class="owl-carousel owl-theme"
+          data-aos="fade-right"
+          data-aos-duration="3000"
+        >
+          {% for img in act %}
+          <div class="item">
+            <img src="/media/{{img.activity}}" alt="" />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="notice" style="background-color: white">
+      <div class="left">
+        <h1>Notice</h1>
+        <marquee behavior="" direction="up" id="mark">
+          {% for note in note|slice:":3" %}
+          <img src="{% static 'new.png' %}" alt="" height="30" width="30" />
+          <b>{{note.date}}</b>
+          <p>{{note.notice}}</p>
+          {% endfor %}
+        </marquee>
+      </div>
+      <div class="right">
+        <img src="{% static 'students.jpg' %}" alt="" />
+      </div>
+    </div>
+
+    {% comment %} <div class="staff" data-aos="fade-up" data-aos-duration="1000">
+      <div class="staff-marquee">
+        <div class="staff-grid-container">
+          <div class="staff-item1">
+            <img src="{% static 'img4.jpeg' %}" alt="" />
+          </div>
+          <div class="staff-right-grid">
+            <div class="staff-item2">
+              <img src="{% static 'img6.jpeg' %}" alt="" />
+            </div>
+            <div class="staff-item3">
+              <img src="{% static 'img10.jpeg' %}" alt="" />
+            </div>
+            <div class="staff-item4">
+              <img src="{% static 'img1.jpeg' %}" alt="" />
+            </div>
+            <div class="staff-item5">
+              <img src="{% static 'img5.jpeg' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+
+    <div class="form" data-aos="fade-right" data-aos-duration="1000">
+      <div class="left">
+        <h1><img src="" alt="" />ARYABHATTA</h1>
+        <p>
+          Join us on a journey of discovery, growth, and achievement at
+          Aryabhatta Public School, where every child is valued and empowered to
+          shine bright!
+        </p>
+      </div>
+      <div class="right">
+        <h2>Get in Touch</h2>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input
+            type="text"
+            placeholder="First Name* "
+            name="f_name"
+            required
+          />
+          <input type="text" placeholder="Last Name* " name="l_name" required />
+          <br /><br />
+          <input type="email" placeholder="Email* " name="email" required />
+          <input type="number" placeholder="Phone* " name="pnum" required />
+          <br /><br />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 5,
+        },
+      },
+    });
+  </script>
+
+  {% endblock body %}
+</html>
