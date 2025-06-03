@@ -209,7 +209,7 @@ def EnquiryInfo(request, pk):
         # Handle the case where the registration with the given id doesn't exist
         return HttpResponse("Data doesn't exists")
 
-    context = {'item': data}
+    context = {'items': data}
     if request.method == 'POST':
         try:
             Info = registration.objects.get(id=pk)

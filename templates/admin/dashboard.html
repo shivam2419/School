@@ -23,9 +23,6 @@ Enquiry Dashboard{% endblock title %} {% block css %}{% static "admin_dashboard.
           <button>
             <a href="enquiry_info/{{ item.id }}">Check</a>
           </button>
-          <button type="submit">
-            <a href="{% url 'Enquiry' item.id %}">Delete</a>
-          </button>
         </td>
       </tr>
       {% endfor %}
