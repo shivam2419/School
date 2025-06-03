@@ -5,7 +5,6 @@ from school_app import views
 urlpatterns = [
     path("",views.index),
     path("api", views.getData, name="api"),
-    path("index2", views.index2, name="api"),
     path("index",views.index, name='index'),
     path("about",views.about, name='about'),
     path("contact",views.contact, name='contact'),

@@ -45,22 +45,6 @@ def index(request):
     s={'stu':stud,'act':acti,'note':note}
     return render(request,('index.html'),s)
 
-# Users section
-def index2(request):
-    if request.method=="POST":
-        fname=request.POST.get('f_name')
-        lname=request.POST.get('l_name')
-        email=request.POST.get('email')
-        pnum=request.POST.get('pnum')
-
-        submit=Cont(f_name=fname,l_name=lname,email=email,pnum=pnum)
-        submit.save()
-    stud =event.objects.order_by('-created_at')
-    acti=activity.objects.all()
-    note=notice.objects.order_by('-created_at')
-    s={'stu':stud,'act':acti,'note':note}
-    return render(request,('index2.html'),s)
-
 def about(request):
     return render(request,('about.html'))
 
@@ -211,7 +195,7 @@ def admin(request):
 
 @login_required(login_url='login')
 def enquiry_dashboard(request):
-    data = registration.objects.all()
+    data = registration.objects.all().order_by('-id')
     context = {
         'items' : data
     }
@@ -271,7 +255,7 @@ def deleteActivity(request, pk):
 
 @login_required(login_url='login')
 def Contact_Info(request):
-    contact_info = Cont.objects.all()
+    contact_info = Cont.objects.all().order_by('-id')
     context = {
         'contact' : contact_info
     }

@@ -16,6 +16,9 @@ p{
 #last div ul li{
     margin-left: 20px;
 }
+#l_span {
+    height: 40px;
+}
 #l_span strong{
     color: gray;
 }

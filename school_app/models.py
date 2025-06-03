@@ -8,6 +8,7 @@ class Contact(models.Model):
     l_name=models.CharField(max_length=200) 
     email=models.EmailField()
     pnum =models.CharField(max_length=400)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 class event(models.Model):
     event_id=models.AutoField
@@ -43,6 +44,7 @@ class registration(models.Model):
     last_schl=models.CharField(max_length=80)
     address=models.CharField(max_length=100)
     trans_req=models.CharField(max_length=10)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 # School Gallery
 class inaugration(models.Model):

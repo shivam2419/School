@@ -1,40 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block css%}static/contact.css{% endblock css%}
     <title>{% block title %} | CONTACT{% endblock title %}</title>
+    {% block css%}static/contact.css{% endblock css%}
   </head>
   <body>
-    {% block body%}
-    <div class="container">
+    {% block body %}
+    <div class="contact-container">
       <div class="middle">
         <div class="left">
           <h2>Boxes full of STEAM</h2>
           <p>
-           Aryabhatta public school asks you to give your information .So that,we can contact with you.Feel free to give information as we will keep it private and safe.
+            Aryabhatta Public School asks you to give your information so that we can contact you. Feel free to share — we keep everything private and safe.
           </p>
           <form action="" method="POST">
-          {% csrf_token %}
+            {% csrf_token %}
             <h3>Contact Our Community!</h3>
             <input type="text" placeholder="First name" name="fname" required />
             <input type="text" placeholder="Last name" name="lname" required />
-            <input type="email" placeholder="Email" name="email" id="mail" required  />
-            <input type="number" placeholder="Phone number*" name="txt"  required/>
-            <br />
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="number" placeholder="Phone number*" name="txt" required />
             <input type="submit" value="Proceed" />
           </form>
         </div>
       </div>
 
-
       <div class="content">
-      <h2>Why <span>Contact ?</span></h2>
-      <p>By contacting us, We can solve all your queries about us. Feel safe about your data and no scam calls or text messages will appear from our side.</p>
-      
+        <h2>Why <span>Contact?</span></h2>
+        <p>By contacting us, we can solve all your queries. Feel safe — no spam or scam messages will come from our side.</p>
       </div>
     </div>
-
-    {% endblock body%}
+    {% endblock body %}
   </body>
 </html>
