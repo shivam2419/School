@@ -3,6 +3,7 @@ from django.urls import path
 from school_app import views
 
 urlpatterns = [
+    path("robots.txt", views.robots_txt, name="robots_txt"),
     path("",views.index),
     path("api", views.getData, name="api"),
     path("index",views.index, name='index'),

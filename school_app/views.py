@@ -11,6 +11,13 @@ import requests
 from decouple import config
 BREVO_API_KEY = config('BREVO_API_KEY')
 
+def robots_txt(request):
+    content = (
+        "User-agent: *\n"
+        "Disallow:\n"
+        "Sitemap: https://www.apsagra.org/sitemap.xml"
+    )
+    return HttpResponse(content, content_type="text/plain")
 
 @api_view(['GET'])
 def getData(request):
