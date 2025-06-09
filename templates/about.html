@@ -3,7 +3,8 @@
 <html lang="en">
   <head>
     {% block css %}static/about.css{% endblock css %}
-    <title>{% block title %}| ABOUT{% endblock title %}</title>
+    {% block meta_description %}Learn more about Aryabhatt Public School, our mission, values, faculty, and our commitment to educational excellence.{% endblock %}
+    <title>{% block title %}| About us{% endblock title %}</title>
   </head>
   {% block body %}
   <div class="container">
