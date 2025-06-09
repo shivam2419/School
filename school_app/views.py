@@ -46,6 +46,39 @@ def index(request):
 
         submit=Cont(f_name=fname,l_name=lname,email=email,pnum=pnum)
         submit.save()
+        # --- Send Email Confirmation using Brevo ---
+        url = "https://api.brevo.com/v3/smtp/email"
+        headers = {
+            "accept": "application/json",
+            "api-key": BREVO_API_KEY,
+            "content-type": "application/json"
+        }
+
+        data_user = {
+            "sender": {"name": "Aryabhatta Public School", "email": "csdslt2309@glbitm.ac.in"},
+            "to": [{"email": email, "name": fname}],
+            "subject": "Contact Form Submitted",
+            "htmlContent": f"""
+                        <html>
+                        <body style="font-family: Arial, sans-serif; line-height: 1.6;">
+                            <h2 style="color: #2c3e50;">Admission Query Confirmation – Aryabhatt Public School</h2>
+                            <p>Dear <strong>{fname}</strong>,</p>
+
+                            <p>Thank you for contacing with <strong>Aryabhatt Public School</strong>.</p>
+
+                            <p>Our admissions team will contact you shortly for the next steps.</p>
+
+                            <p>If you have any questions, feel free to reach out to us at <a href="mailto:contact@aryabhattpublicschool.com">contact@aryabhattapublicedu@gmail.com</a>.</p>
+
+                            <p>Warm regards,<br>
+                            <strong>Aryabhatt Public School</strong><br>
+                            Admission Office</p>
+                        </body>
+                        </html>""",
+            "textContent": f"Dear {fname},\nThank you for registering. We have received your admission form."
+        }
+
+        requests.post(url, json=data_user, headers=headers)
     stud =event.objects.order_by('-created_at')
     acti=activity.objects.all()
     note=notice.objects.order_by('-created_at')
