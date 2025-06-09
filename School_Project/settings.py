@@ -76,9 +76,11 @@ WSGI_APPLICATION = "School_Project.wsgi.application"
 
 CORS_ALLOWED_ORIGINS = [
     "https://school-project-upz6.onrender.com",
+    "https://www.apsagra.org",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://school-project-upz6.onrender.com",
+    "https://www.apsagra.org",
 ]
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
