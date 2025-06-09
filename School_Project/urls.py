@@ -17,8 +17,15 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import sitemaps
+from django.contrib.sitemaps.views import sitemap
+from school_app.sitemaps import StaticViewSitemap
 
+sitemaps_dict = {
+    'static': StaticViewSitemap,
+}
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include('school_app.urls'))
+    path("", include('school_app.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps_dict}, name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
