@@ -23,23 +23,47 @@
     <meta name="keywords" content="Aryabhatt Public School, Agra, school in Agra, CBSE school, quality education, best schools in Agra">
 
     <!-- Author -->
-    <meta name="author" content="Aryabhatt Public School, Agra">
+    <meta name="author" content="Aryabhatt Public School">
 
     <!-- Open Graph (for Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="{% block og_title %}Aryabhatt Public School, Agra - Excellence in Education{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Aryabhatt Public School - Excellence in Education{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Providing a nurturing and academically enriching environment for students in Agra.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.apsagra.org/">
-    <meta property="og:image" content="https://www.apsagra.org/static/logo.jpg">  <!-- Update with your actual logo/image URL -->
+    <meta property="og:image" content="https://www.apsagra.org/static/logo.png">  <!-- Update with your actual logo/image URL -->
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}Aryabhatt Public School, Agra{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}Excellence in Education at Aryabhatt Public School, Agra.{% endblock %}">
-    <meta name="twitter:image" content="https://www.apsagra.org/static/logo.jpg"> <!-- Update with your actual logo/image URL -->
+    <meta name="twitter:image" content="https://www.apsagra.org/static/logo.png"> <!-- Update with your actual logo/image URL -->
 
     <!-- Favicon -->
-    <link rel="icon" href={% static "logo.jpg" %} type="image/x-icon">
+    <link rel="icon" href={% static "logo.png" %} type="image/x-icon">
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Aryabhatt Public School, Agra",
+      "url": "https://www.apsagra.org/",
+      "logo": "https://www.apsagra.org/static/logo.png",  <!-- replace with actual URL -->
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "Customer Support",
+        "email": "info@apsagra.org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your school address here",
+        "addressLocality": "Agra",
+        "addressRegion": "UP",
+        "postalCode": "XXXXXX",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
     <!--Search Engine meta tags end-->
     
     <link
@@ -75,7 +99,7 @@
       <div id="bar">
         <i Style="font-size:24px;" class="fa fa-bars" onclick="openNav()"></i>
       </div>
-      <a href="index"><img src={% static 'logo.jpg' %} alt=".." /></a>
+      <a href="index"><img src={% static 'logo.png' %} alt=".." /></a>
       <h2>ARYABHATTA</h2>
       <ul>
       <li><i class="fa fa-user" style="margin-right: 10px"></i
@@ -136,7 +160,7 @@
                   <p>
                     <img
                       loading="lazy"
-                      src="{% static 'logo.jpg' %}"
+                      src="{% static 'logo.png' %}"
                       alt="Girl in a jacket"
                       width="350"
                       height="100"
@@ -216,7 +240,7 @@
                   ></i></a
                 >&nbsp;&nbsp;&nbsp; <a href="tel:7011172174">+91-7011172174</a>,
                 <a href="tel:9911414480">+91-9911414480</a
-                >,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                >,
                 <a href="tel:9911014480">+91-9911014480</a>
               </div>
             </div>
@@ -273,9 +297,9 @@
       <div class="footer-bottom-area">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12 col-xs-12 text-center">
+            {% comment %} <div class="col-sm-12 col-xs-12 text-center">
               © Copyright <a href=""> Aryabhatt Agra</a> 2025.
-            </div>
+            </div> {% endcomment %}
           </div>
         </div>
       </div>

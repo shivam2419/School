@@ -8,7 +8,7 @@ body{
 
 /*  Middle content */
 .middle {
-  background-image: url('main.png');
+  background-image: url('background-image.png');
   padding: 5%;
   color: white;
   background-repeat: no-repeat;
